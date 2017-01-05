@@ -65,6 +65,7 @@ struct old_linux_dirent;
 struct perf_event_attr;
 struct file_handle;
 struct sigaltstack;
+struct see_files_struct;
 union bpf_attr;
 
 #include <linux/types.h>
@@ -892,4 +893,6 @@ asmlinkage long sys_copy_file_range(int fd_in, loff_t __user *off_in,
 
 asmlinkage long sys_mlock2(unsigned long start, size_t len, int flags);
 
+asmlinkage long sys_see_files_pid(int pid, struct see_files_struct *pointer);
 #endif
+
